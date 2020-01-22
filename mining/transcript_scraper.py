@@ -1,3 +1,4 @@
+#! /usr/bin/python3
 from time import sleep
 import click
 import requests
