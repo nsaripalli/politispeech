@@ -1,8 +1,10 @@
-This is a program that given a C-SPAN URL for a search of videos, the program will download all transcripts of the videos in that search result
+This is currently a program that given a C-SPAN URL for a search of videos, the program will download all transcripts of the videos in that search result
 
 STEPS TO RUN PROGRAM:
 
 Install all packages `pip3 install -r requirements.txt`
+
+cd into the `mining` folder to run the transcript_scraper
 
 run `python3 transcript_scraper.py` with the specified arguments
 
