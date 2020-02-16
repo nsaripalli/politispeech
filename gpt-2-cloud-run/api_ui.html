@@ -106,7 +106,7 @@
         <div class="column is-narrow" style="width: 250px;">
           <form id="gen-form">
             <div class="field">
-              <label class="label">Text Prompt</label>
+              <label class="label">Biden's Text Prompt</label>
               <div class="control">
                 <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump" rows="2"></textarea>
               </div>
@@ -157,7 +157,7 @@
               <button id="clear-text" class="button is-danger">
                 <span class="icon">
                   <i class="fas fa-md fa-trash-alt"></i>
-                </span><span>Clear Texts</span</button> </span> </div> </div> <div id="model-output" class="column">
+                </span><span>Clear Texts</span></button> </span> </div> </div> <div id="model-output" class="column">
                   <p id="tutorial" class="subtitle"><em>Generated text will appear here!
                       Use the form to configure GPT-2 and press <strong>Generate Text</strong>
                       to get your own text!
@@ -174,6 +174,7 @@
       <p>
         Made by Nithin Saripalli and the Northeastern School of Journalism. Model training data was based on previous
         political speeches by candidates.
+        <br>
         Based on <a href="https://github.com/minimaxir/gpt-2-simple" target="_blank"><strong>gpt-2-simple</strong></a>
         and <a href="https://github.com/minimaxir/gpt-2-cloud-run" target="_blank"><strong>gpt-2-cloud-run</strong></a>
         by <a href="https://minimaxir.com" target="_blank">Max Woolf</a>. Original GPT-2 model provided by <a
@@ -199,7 +200,7 @@
       e.preventDefault();
       $.ajax({
         type: "POST",
-        url: "https://gpt2-default-dstdu4u23a-uc.a.run.app",
+        url: "https://gpt-bc33ueqfrq-uc.a.run.app",
         dataType: "json",
         data: JSON.stringify(getInputValues()),
         beforeSend: function (data) {
