@@ -7,8 +7,14 @@ import os
 import gc
 
 from starlette.applications import Starlette
+from starlette.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
 
-app = Starlette(debug=False)
+middleware = [
+    Middleware(CORSMiddleware, allow_origins=['*'], allow_methods=['*'])
+]
+
+app = Starlette(debug=False, middleware=middleware)
 
 sess = gpt2.start_tf_sess(threads=1)
 gpt2.load_gpt2(sess)
@@ -35,8 +41,8 @@ async def homepage(request):
                              headers=response_header)
 
     text = gpt2.generate(sess,
-                         length=max(int(params.get('length', 1023)), 1023),
-                         temperature=min(0.0, max(float(params.get('temperature', 0.7)), 1.0)),
+                         length=min(int(params.get('length', 1023)), 1023),
+                         temperature=max(0.0, min(float(params.get('temperature', 0.7)), 1.0)),
                          top_k=int(params.get('top_k', 0)),
                          top_p=float(params.get('top_p', 0)),
                          prefix=params.get('prefix', '')[:500],
