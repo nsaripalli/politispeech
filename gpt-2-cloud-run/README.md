@@ -10,6 +10,17 @@ You can play with a web-based demo of a Cloud Run API pointing at the default 11
 
 The demo web UI is based off of the `app_ui.html` file in this repo (built on [Bulma](https://bulma.io) and [jQuery](https://jquery.com)) and is designed to be easily hackable to add new features and/or adjust the design (e.g. you can change the URL in the JavaScript function to point to your own Cloud Run API).
 
+## Command to push all canidate docker images to gcp
+```shell
+for can in bloomberg buttigieg sanders warren; do
+cp ../canidates/$can/checkpoint_$can.tar .; tar -xvf checkpoint_$can.tar; cd checkpoint; mv $can run1; cd ..; rm checkpoint_$can.tar
+docker build . -t $can; docker tag $can gcr.io/journalism-268404/$can; docker push gcr.io/journalism-268404/$can; rm -rf checkpoint
+done
+``` 
+
+Each canidate has their own docker container because the models themselves
+are quite large and one image with more than one canidate would be very large.
+
 ## How to Build the Container And Start Cloud Run
 
 Since Cloud Run is stateless without access to local storage, you must bundle the model within the container. First, download/clone this repo and copy the model into the folder (the model should be in the form of the folder hierarchy `/checkpoint/run1`, which is the case by default for most finetuning scripts)
