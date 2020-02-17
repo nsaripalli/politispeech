@@ -53,6 +53,20 @@
 <html>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158645866-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158645866-2');
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI-Generated Text with GPT-2 using Google Cloud Run</title>
@@ -244,7 +258,7 @@
             var selected_candidate_at_request = document.getElementById('candidate').value;
             $.ajax({
                 type: "POST",
-                url: "https://" + selected_candidate_at_request.toLowerCase() +"-gpt2-backend.nithin.info/",
+                url: "https://" + selected_candidate_at_request.toLowerCase() + "-gpt2-backend.nithin.info/",
                 dataType: "json",
                 data: JSON.stringify(getInputValues()),
                 beforeSend: function (data) {
