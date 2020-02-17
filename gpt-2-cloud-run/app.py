@@ -6,6 +6,8 @@ import uvicorn
 import os
 import gc
 
+from starlette.applications import Starlette
+
 app = Starlette(debug=False)
 
 sess = gpt2.start_tf_sess(threads=1)
@@ -33,8 +35,8 @@ async def homepage(request):
                              headers=response_header)
 
     text = gpt2.generate(sess,
-                         length=int(params.get('length', 1023)),
-                         temperature=float(params.get('temperature', 0.7)),
+                         length=max(int(params.get('length', 1023)), 1023),
+                         temperature=min(0.0, max(float(params.get('temperature', 0.7)), 1.0)),
                          top_k=int(params.get('top_k', 0)),
                          top_p=float(params.get('top_p', 0)),
                          prefix=params.get('prefix', '')[:500],
