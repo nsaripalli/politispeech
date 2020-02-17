@@ -12,7 +12,7 @@ The demo web UI is based off of the `app_ui.html` file in this repo (built on [B
 
 ## Command to push all canidate docker images to gcp
 ```shell
-for can in bloomberg buttigieg sanders warren; do
+for can in bloomberg buttigieg sanders warren biden; do
 cp ../canidates/$can/checkpoint_$can.tar .; tar -xvf checkpoint_$can.tar; cd checkpoint; mv $can run1; cd ..; rm checkpoint_$can.tar
 docker build . -t $can; docker tag $can gcr.io/journalism-268404/$can; docker push gcr.io/journalism-268404/$can; rm -rf checkpoint
 done
