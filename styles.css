@@ -13,6 +13,8 @@ body {
 
 footer {
     /* max-height: 5% !important; */
+    width: 100%;
+    font-size: .9em;
     padding: 1em !important;
     background-color: #fafafa;
 }
@@ -219,6 +221,12 @@ ORIGINAL STYLES
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+    .settings-col#model-output {
+        padding-right: 25px;
+    }
 }
 
 img.thumbnail {
