@@ -31,9 +31,25 @@ main {
     }
 }
 
+.header {
+    margin-bottom: 1em;
+}
+
 .header h1 {
-    font-size: 2em;
+    font-size: 1.75em;
     font-weight: 900;
+    line-height: 1.3em;
+}
+
+@media (min-width: 475px) {
+    .header h1 {
+        font-size: 2em;
+        line-height: 1.5em;
+    }
+}
+
+.intro {
+    font-size: 1.2em;
 }
 
 /*---------------------------
@@ -134,6 +150,7 @@ SETTINGS
 
 .settings-col {
     width: 100%;
+    margin-bottom: 1.5em;
 }
 
 .settings-left, .settings-right {
