@@ -63,7 +63,7 @@
     <div class="settings">
         <div class="settings-col" id="model-output">
             <p id="tutorial" class="subtitle"><em>Generated text will appear here!
-                Select a candidate and enter a talking point (optional) to generate a speech.
+                Select a candidate and enter a talking point (optional) to generate a message.
             </em></p>
         </div>
         <div class="settings-col settings-form">
@@ -202,12 +202,12 @@
                     var gentext = data.text;
                     if ($("#prefix").length & $("#prefix").val() != '') {
                         var pattern = new RegExp('^' + $("#prefix").val(), 'g');
-                        var gentext = gentext.replace(pattern, '<strong>' + $("#prefix").val() + '</strong>');
+                        var gentext = gentext.replace(pattern, '<i>' + $("#prefix").val() + '</i>');
                     }
 
                     var gentext = gentext.replace(/\n\n/g, "<div><br></div>").replace(/\n/g, "<div></div>");
-                    gentext = selected_candidate_at_request.italics().bold() + ": " + gentext
-                    var html = '<div class=\"gen-box\">' + gentext + '</div><div class="gen-border"></div>';
+                    gentext = selected_candidate_at_request.bold() + ": " + gentext + "&hellip;"
+                    var html = '<div class=\"gen-box\"><img class=\"thumbnail\" src=\"media/'+ selected_candidate_at_request.toLowerCase() + '.jpg\"/><p>' + gentext + '</p></div><div class="gen-border"></div>';
                     $(html).appendTo('#model-output').hide().fadeIn("slow");
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
