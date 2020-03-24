@@ -32,6 +32,11 @@ main {
     }
 }
 
+.header h1 {
+    font-size: 2em;
+    font-weight: 900;
+}
+
 /*---------------------------
 GRAPHICS
 ---------------------------*/
@@ -163,6 +168,7 @@ SETTINGS
 .settings-advanced {
     display: none;
 }
+
 
 /*---------------------------
 ORIGINAL STYLES

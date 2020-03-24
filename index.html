@@ -27,10 +27,13 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet"></head>
 
 <body>
 <main>
+    <div class="header">
+        <h1>Generating Political Speech</h1>
+    </div>
     <div class="Candidates">
         <div class="Candidates-slides">
             <div class="Candidates-slide">
@@ -59,10 +62,10 @@
     <div class="settings">
         <div class="settings-col">
             <label for="candidate">Choose a candidate</label>
-            <select id="candidate">
+            <select class="settings-select" id="candidate">
                 <option value="Sanders">Bernie Sanders</option>
                 <option value="Biden">Joe Biden</option>
-                <option value="Bloomberg">Micheal Bloomberg</option>
+                <option value="Bloomberg">Michael Bloomberg</option>
                 <option value="Warren" selected="selected">Elizabeth Warren</option>
                 <option value="Buttigieg">Pete Buttigieg</option>
             </select>
