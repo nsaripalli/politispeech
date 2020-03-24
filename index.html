@@ -1,55 +1,6 @@
 <!DOCTYPE html>
 
-<style>
-    html,
-    body {
-        height: 95% !important;
-        margin: 0 !important;
-    }
-
-    footer {
-        /*max-height: 5% !important;*/
-        padding: 1em !important
-    }
-
-    section {
-        min-height: 95% !important
-    }
-
-    .gen-box {
-        background-color: #fff;
-        display: block;
-        padding: 1.25rem;
-        color: #4a4a4a;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.25;
-    }
-
-    .gen-border {
-        height: 0.25em;
-        background-color: #d5d5d5;
-    }
-
-    .gen-box.warning {
-        color: red;
-        font-weight: 700;
-
-    }
-
-    .brand-text {
-        display: flex;
-        align-items: center;
-        font-size: 1.5em
-    }
-
-    #extra-buttons {
-        padding-top: 1em;
-        margin-top: 1em;
-        border-top: 0.5px solid #d5d5d5;
-    }
-</style>
-
+<link rel="stylesheet" type="text/css" href="styles.css"/>
 <html>
 
 <head>
@@ -76,150 +27,153 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-</head>
-<nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-    <span class="icon is-large">
-      <span class="fa-stack">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-robot fa-stack-1x fa-inverse"></i>
-      </span>
-    </span>
-        <div class="brand-text is-family-code is-uppercase has-text-weight-bold">Politispeech</div>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet"></head>
+
+<body>
+<main>
+    <div class="header">
+        <h1>Generating Political Speech</h1>
+        <p class="intro">What happens if we replace speech writers with a machine learning model</p>
+    </div>
+    <div class="Candidates">
+        <div class="Candidates-slides">
+            <div class="Candidates-slide">
+                <img src="/media/biden.jpg" />
+                <p class="speech-preview"><b>Biden</b>: <i>2020</i>, we are trying to keep the cost of medicare and social security under control. but, you</p>
+            </div>
+            <div class="Candidates-slide">
+                <img src="/media/bloomberg.jpg" />
+                <p class="speech-preview"><b>Bloomberg</b>: <i>2020</i>, the only group that actually promoted the notion that this is some kind of moral imperative that you have</p>
+            </div>
+            <div class="Candidates-slide">
+                <img src="/media/buttigieg.jpg" />
+                <p class="speech-preview"><b>Buttigieg</b>: <i>2020</i>. but if you were wondering why i am even here, because the truth is, it is because</p>
+            </div>
+            <div class="Candidates-slide">
+                <img src="/media/sanders.jpg" />
+                <p class="speech-preview"><b>Sanders</b>: <i>2020</i>: the truth is, we are hurting. we are not going anywhere. the only way we can</p>
+            </div>
+            <div class="Candidates-slide">
+                <img src="/media/warren.jpg" />
+<<<<<<< HEAD
+                <p class="speech-preview"><b>Warren</b>: <i>2020</i>&nbsp; is a great fit for a couple who grew up in a country where women had very little say in</p>
+=======
+                <p class="speech-preview"><b>Warren</b>: <i>2020</i>%nbsp; is a great fit for a couple who grew up in a country where women had very little say in</p>
+>>>>>>> 07e7036d498cd6e931ad9e13a6d6d81f1f8b9230
+            </div>
+        </div>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu is-active">
-        <div class="navbar-start">
-
-
-            <div class="navbar-item">
-                Generate custom 2020 political candidate speeches using the GPT-2 model
-            </div>
-
+    <div class="settings">
+        <div class="settings-col" id="model-output">
+            <p id="tutorial" class="subtitle"><em>Generated text will appear here!
+                Select a candidate and enter a talking point (optional) to generate a message.
+            </em></p>
         </div>
+        <div class="settings-col settings-form">
+            <div class="settings-left">
+                <label for="candidate">Choose a candidate</label>
+                <select class="settings-select" id="candidate">
+                    <option value="Sanders">Bernie Sanders</option>
+                    <option value="Biden">Joe Biden</option>
+                    <option value="Bloomberg">Michael Bloomberg</option>
+                    <option value="Warren" selected="selected">Elizabeth Warren</option>
+                    <option value="Buttigieg">Pete Buttigieg</option>
+                </select>
+            </div>
+            <div class="settings-right">
+                <form id="gen-form">
+                    <div class="field">
+                        <label class="label" id="candidate_speech_prompt">
+                            Talking points (optional)
+                        </label>
+                        <div class="control">
+                            <textarea id="prefix" class="textarea" type="text" placeholder="Health care"
+                                        rows="2"></textarea>
+                        </div>
+                        <p class="help">Starts the generated text with the specified text. <em>(Max 100
+                            characters)</em></p>
+                    </div>
+                    <div class="settings-advanced">
+                        <div class="field">
+                            <label class="label">Generated Text Length</label>
+                            <div class="control">
+                                <input id="length" class="input" type="text" placeholder="Text input" value="20">
+                            </div>
+                            <p class="help">Length of the text in tokens to generate. <em>(max: 1023)</em></p>
+                        </div>
+                        <div class="field">
+                            <label class="label">Temperature</label>
+                            <div class="control">
+                                <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
+                            </div>
+                            <p class="help">Controls the generated text "creativity." <em>(the higher the temperature, the
+                                more creative)</em>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <label class="label">Top <em>k</em></label>
+                            <div class="control">
+                                <input id="top_k" class="input" type="text" placeholder="40" value="40">
+                            </div>
+                            <p class="help">Constrains the generated text tokens to the top <em>k</em> possibilities. <em>(set
+                                to 0 to disable)</em>
+                            </p>
+                        </div>
+                    </div>
 
-        <div class="navbar-end">
-            <div class="navbar-item is-hidden-touch">
-                <div class="buttons">
-                    <a class="button is-light" href="https://github.com/nsaripalli/political-gpt-2" target="_blank">
-            <span class="icon">
-              <i class="fab fa-lg fa-github"></i>
-            </span><span>GitHub</span>
-                    </a>
+                    <div class="buttons">
+                        <span class="control">
+                            <button type="submit" name="submit" id="generate-text" class="button is-link">
+                                <span class="icon">
+                                    <i class="fas fa-md fa-pen"></i>
+                                </span>
+                                <span>Generate Text!</span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <div id="extra-buttons" class="buttons">
+                    <span class="control">
+                        <button id="save-image" class="button is-success">
+                            <span class="icon">
+                            <i class="fas fa-md fa-save"></i>
+                            </span><span>Save Image</span>
+                        </button>
+                    </span>
+
+                    <span class="control">
+                        <button id="clear-text" class="button is-danger">
+                            <span class="icon">
+                            <i class="fas fa-md fa-trash-alt"></i>
+                            </span>
+                            <span>Clear Texts</span>
+                        </button> 
+                    </span>
                 </div>
             </div>
         </div>
     </div>
-</nav>
-
-<body>
-<section id="main" class="section">
-    <div class="container">
-        <div class="columns is-variable is-5">
-            <div class="column is-narrow" style="width: 250px;">
-                <label for="candidate">Choose a candidate</label>
-
-                <select id="candidate">
-                    <option value="Sanders">Bernie Sanders</option>
-                    <option value="Biden">Joe Biden</option>
-                    <option value="Bloomberg">Micheal Bloomberg</option>
-                    <option value="Warren" selected="selected">Elizabeth Warren</option>
-                    <option value="Buttigieg">Pete Buttigieg</option>
-                </select>
-
-                <form id="gen-form">
-                    <div class="field">
-                        <br>
-                        <label class="label" id="candidate_speech_prompt">
-                            Warren's speech prompt
-                        </label>
-                        <div class="control">
-                            <textarea id="prefix" class="textarea" type="text" placeholder="Donald Trump"
-                                      rows="2"></textarea>
-                        </div>
-                        <p class="help">Starts the generated text with the specified text. <em>(Optional: max 500
-                            characters)</em></p>
-                    </div>
-                    <div class="field">
-                        <label class="label">Generated Text Length</label>
-                        <div class="control">
-                            <input id="length" class="input" type="text" placeholder="Text input" value="100">
-                        </div>
-                        <p class="help">Length of the text in tokens to generate. <em>(max: 1023)</em></p>
-                    </div>
-
-                    <div class="field">
-                        <label class="label">Temperature</label>
-                        <div class="control">
-                            <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
-                        </div>
-                        <p class="help">Controls the generated text "creativity." <em>(the higher the temperature, the
-                            more
-                            creative)</em></p>
-                    </div>
-                    <div class="field">
-                        <label class="label">Top <em>k</em></label>
-                        <div class="control">
-                            <input id="top_k" class="input" type="text" placeholder="40" value="40">
-                        </div>
-                        <p class="help">Constrains the generated text tokens to the top <em>k</em> possibilities. <em>(set
-                            to 0 to
-                            disable)</em></p>
-                    </div>
-                    <div class="buttons">
-              <span class="control">
-                <button type="submit" name="submit" id="generate-text" class="button is-link">
-                  <span class="icon">
-                    <i class="fas fa-md fa-pen"></i>
-                  </span><span>Generate Text!</span></button>
-              </span>
-
-                    </div>
-                </form>
-                <div id="extra-buttons" class="buttons">
-            <span class="control">
-              <button id="save-image" class="button is-success">
-                <span class="icon">
-                  <i class="fas fa-md fa-save"></i>
-                </span><span>Save Image</span></button>
-            </span>
-                    <span class="control">
-              <button id="clear-text" class="button is-danger">
-                <span class="icon">
-                  <i class="fas fa-md fa-trash-alt"></i>
-                </span><span>Clear Texts</span></button> </span></div>
-            </div>
-            <div id="model-output" class="column">
-                <p id="tutorial" class="subtitle"><em>Generated text will appear here!
-                    Use the form to configure GPT-2 and press <strong>Generate Text</strong>
-                    to get your own text!
-                </em></p>
-            </div>
-        </div>
-    </div>
-
-
-</section>
-
-<footer class="footer">
-    <div class="content has-text-centered">
-        <p>
-            Made by Nithin Saripalli and the Northeastern School of Journalism. Model training data was based on
-            previous
-            political speeches by candidates.
-            <br>
-            Based on <a href="https://github.com/minimaxir/gpt-2-simple"
-                        target="_blank"><strong>gpt-2-simple</strong></a>
-            and <a href="https://github.com/minimaxir/gpt-2-cloud-run" target="_blank"><strong>gpt-2-cloud-run</strong></a>
-            by <a href="https://minimaxir.com" target="_blank">Max Woolf</a>. Original GPT-2 model provided by <a
-                href="https://openai.com" target="_blank">OpenAI</a>. This website content
-            is licensed <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
-        </p>
-    </div>
+</main>
+<footer>
+    <p class="footer-content">
+        Made by Nithin Saripalli, <a href="https://alexanderlim.io/" target="_blank">Alex Lim</a> and the Northeastern School of Journalism. Model training data was based on
+        previous political speeches by candidates.
+    </p>
+    <p>
+        Based on <a href="https://github.com/minimaxir/gpt-2-simple"
+                    target="_blank"><strong>gpt-2-simple</strong></a>
+        and <a href="https://github.com/minimaxir/gpt-2-cloud-run" target="_blank"><strong>gpt-2-cloud-run</strong></a>
+        by <a href="https://minimaxir.com" target="_blank">Max Woolf</a>. Original GPT-2 model provided by <a
+            href="https://openai.com" target="_blank">OpenAI</a>. This website content
+        is licensed <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
+    </p>
 </footer>
 
 
 </body>
+
+<!-- JAVASCRIPT ------------------------------------------>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
@@ -229,28 +183,6 @@
 </script>
 
 <script type="text/javascript">
-    <!--  This updates the -->
-    $(function () {
-        $("#candidate").on("change", function () {
-            switch ($(this).val()) {
-                case "Sanders":
-                    $("#candidate_speech_prompt").html("Sanders's speech prompt");
-                    break;
-                case "Biden":
-                    $("#candidate_speech_prompt").html("Biden's speech prompt");
-                    break;
-                case "Bloomberg":
-                    $("#candidate_speech_prompt").html("Bloomberg's speech prompt");
-                    break;
-                case "Warren":
-                    $("#candidate_speech_prompt").html("Warren's speech prompt");
-                    break;
-                case "Buttigieg":
-                    $("#candidate_speech_prompt").html("Buttigieg's speech prompt");
-                    break;
-            }
-        });
-    });
     // Given code
     $(function () {
         $('#gen-form').submit(function (e) {
@@ -272,12 +204,12 @@
                     var gentext = data.text;
                     if ($("#prefix").length & $("#prefix").val() != '') {
                         var pattern = new RegExp('^' + $("#prefix").val(), 'g');
-                        var gentext = gentext.replace(pattern, '<strong>' + $("#prefix").val() + '</strong>');
+                        var gentext = gentext.replace(pattern, '<i>' + $("#prefix").val() + '</i>');
                     }
 
                     var gentext = gentext.replace(/\n\n/g, "<div><br></div>").replace(/\n/g, "<div></div>");
-                    gentext = selected_candidate_at_request.italics().bold() + ": " + gentext
-                    var html = '<div class=\"gen-box\">' + gentext + '</div><div class="gen-border"></div>';
+                    gentext = selected_candidate_at_request.bold() + ": " + gentext + "&hellip;"
+                    var html = '<div class=\"gen-box\"><img class=\"thumbnail\" src=\"media/'+ selected_candidate_at_request.toLowerCase() + '.jpg\"/><p>' + gentext + '</p></div><div class="gen-border"></div>';
                     $(html).appendTo('#model-output').hide().fadeIn("slow");
                 },
                 error: function (jqXHR, textStatus, errorThrown) {

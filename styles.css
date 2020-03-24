@@ -1,0 +1,249 @@
+/*---------------------------
+GENERAL
+---------------------------*/
+
+html,
+body {
+    /* height: 100% !important; */
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    padding: 15px;
+    background-color: #fafafa;
+}
+
+footer p {
+    margin-bottom: .5em;
+    max-width: 1200px;
+}
+
+main {
+    /* min-height: 95% !important; */
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px;
+    font-family: 'Lato', sans-serif;
+    color: #2c2c2c;
+}
+
+@media (min-width: 475px) {
+    main, footer {
+        padding: 25px;
+    }
+}
+
+.header {
+    margin-bottom: 1em;
+}
+
+.header h1 {
+    font-size: 1.75em;
+    font-weight: 900;
+    line-height: 1.3em;
+}
+
+@media (min-width: 475px) {
+    .header h1 {
+        font-size: 2em;
+        line-height: 1.5em;
+    }
+}
+
+.intro {
+    font-size: 1.2em;
+}
+
+/*---------------------------
+CAROUSEL
+---------------------------*/
+/** * Designed by Upperquad [https://upperquad.com] developed by Aranja [https://aranja.com] for Facebook. * See it live on https://nonprofits.fb.com/learn-the-basics */
+
+.Candidates {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    border: solid 2px #d41b2c;
+    border-radius: 5px;
+}
+img {
+    width: 50%;
+    border-radius: 50%;
+}
+
+.Candidates-slides {
+    position: relative;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+.Candidates-slide {
+    position: absolute;
+    width: 100%;
+    padding: 30px 10px;
+    height: 250px;
+}
+
+@media (min-width: 475px) {
+    .Candidates-slide {
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .Candidates-slide {
+        width: 33.333%;
+    }
+}
+
+.speech-preview::after {
+    content: '...'
+}
+
+.Candidates-slide:nth-child(1) {
+    animation: Candidates-animation 20s -4s ease-in-out infinite;
+}
+.Candidates-slide:nth-child(2) {
+    animation: Candidates-animation 20s -8s ease-in-out infinite;
+}
+.Candidates-slide:nth-child(3) {
+    animation: Candidates-animation 20s -12s ease-in-out infinite;
+}
+.Candidates-slide:nth-child(4) {
+    animation: Candidates-animation 20s -16s ease-in-out infinite;
+}
+.Candidates-slide:nth-child(5) {
+    animation: Candidates-animation 20s -20s ease-in-out infinite;
+}
+@keyframes Candidates-animation {
+    0%, 16% {
+        transform: translateX(300%);
+   }
+    20%, 36% {
+        transform: translateX(200%);
+   }
+    40%, 56% {
+        transform: translateX(100%);
+   }
+    60%, 76% {
+        transform: translateX(0%);
+   }
+    80%, 96% {
+        transform: translateX(-100%);
+   }
+    100%, 100% {
+        transform: translateX(-200%);
+   }
+}
+
+/*---------------------------
+SETTINGS
+---------------------------*/
+.settings {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+}
+
+.settings-col {
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+.settings-left, .settings-right {
+    margin-bottom: 1em;
+}
+
+@media (min-width: 475px) {
+    .settings-form {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .settings-left, .settings-right {
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .settings {
+        flex-direction: row;
+    }
+
+    .settings-form {
+        flex-direction: column;
+    }
+
+    .settings-left, .settings-right {
+        width: 100%;
+    }
+
+    .settings-col {
+        width: 50%;
+    }
+}
+
+#candidate_speech_prompt {
+    font-weight: 400;
+}
+
+.settings-advanced {
+    display: none;
+}
+
+.settings-select {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3em;
+    font-weight: 900;
+    color: #2c2c2c;
+    border: solid 2px #d41b2c;
+    border-radius: 5px;
+}
+
+.gen-box {
+    display: flex;
+    flex-direction: row;
+    padding: 1.25rem;
+    color: #2c2c2c;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+    .settings-col#model-output {
+        padding-right: 25px;
+    }
+}
+
+img.thumbnail {
+    width: 3em;
+    height: 3em;
+    margin-right: 1em;
+}
+
+#generate-text {
+    background-color: #d41b2c;
+}
+
+.gen-border {
+    height: 0.25em;
+    background-color: #d5d5d5;
+}
+
+.gen-box.warning {
+    color: #d41b2c;
+    font-weight: 700;
+
+}
+
+#extra-buttons {
+    display: none;
+    padding-top: 1em;
+    margin-top: 1em;
+    border-top: 0.5px solid #d5d5d5;
+}
