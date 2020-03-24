@@ -60,91 +60,94 @@
     </div>
 
     <div class="settings">
-        <div class="settings-col">
-            <label for="candidate">Choose a candidate</label>
-            <select class="settings-select" id="candidate">
-                <option value="Sanders">Bernie Sanders</option>
-                <option value="Biden">Joe Biden</option>
-                <option value="Bloomberg">Michael Bloomberg</option>
-                <option value="Warren" selected="selected">Elizabeth Warren</option>
-                <option value="Buttigieg">Pete Buttigieg</option>
-            </select>
-            <form id="gen-form">
-                <div class="field">
-                    <br>
-                    <label class="label" id="candidate_speech_prompt">
-                        Warren's speech prompt
-                    </label>
-                    <div class="control">
-                        <textarea id="prefix" class="textarea" type="text" placeholder="Health care"
-                                    rows="2"></textarea>
-                    </div>
-                    <p class="help">Starts the generated text with the specified text. <em>(Optional: max 500
-                        characters)</em></p>
-                </div>
-                <div class="field">
-                    <label class="label">Generated Text Length</label>
-                    <div class="control">
-                        <input id="length" class="input" type="text" placeholder="Text input" value="20">
-                    </div>
-                    <p class="help">Length of the text in tokens to generate. <em>(max: 1023)</em></p>
-                </div>
-                <div class="settings-advanced">
-                    <div class="field">
-                        <label class="label">Temperature</label>
-                        <div class="control">
-                            <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
-                        </div>
-                        <p class="help">Controls the generated text "creativity." <em>(the higher the temperature, the
-                            more creative)</em>
-                        </p>
-                    </div>
-                    <div class="field">
-                        <label class="label">Top <em>k</em></label>
-                        <div class="control">
-                            <input id="top_k" class="input" type="text" placeholder="40" value="40">
-                        </div>
-                        <p class="help">Constrains the generated text tokens to the top <em>k</em> possibilities. <em>(set
-                            to 0 to disable)</em>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="buttons">
-                    <span class="control">
-                        <button type="submit" name="submit" id="generate-text" class="button is-link">
-                            <span class="icon">
-                                <i class="fas fa-md fa-pen"></i>
-                            </span>
-                            <span>Generate Text!</span>
-                        </button>
-                    </span>
-                </div>
-            </form>
-            <div id="extra-buttons" class="buttons">
-                <span class="control">
-                    <button id="save-image" class="button is-success">
-                        <span class="icon">
-                        <i class="fas fa-md fa-save"></i>
-                        </span><span>Save Image</span>
-                    </button>
-                </span>
-
-                <span class="control">
-                    <button id="clear-text" class="button is-danger">
-                        <span class="icon">
-                        <i class="fas fa-md fa-trash-alt"></i>
-                        </span>
-                        <span>Clear Texts</span>
-                    </button> 
-                </span>
-            </div>
-        </div>
         <div class="settings-col" id="model-output">
             <p id="tutorial" class="subtitle"><em>Generated text will appear here!
                 Use the form to configure GPT-2 and press <strong>Generate Text</strong>
                 to get your own text!
             </em></p>
+        </div>
+        <div class="settings-col settings-form">
+            <div class="settings-left">
+                <label for="candidate">Choose a candidate</label>
+                <select class="settings-select" id="candidate">
+                    <option value="Sanders">Bernie Sanders</option>
+                    <option value="Biden">Joe Biden</option>
+                    <option value="Bloomberg">Michael Bloomberg</option>
+                    <option value="Warren" selected="selected">Elizabeth Warren</option>
+                    <option value="Buttigieg">Pete Buttigieg</option>
+                </select>
+            </div>
+            <div class="settings-right">
+                <form id="gen-form">
+                    <div class="field">
+                        <label class="label" id="candidate_speech_prompt">
+                            Talking points (optional)
+                        </label>
+                        <div class="control">
+                            <textarea id="prefix" class="textarea" type="text" placeholder="Health care"
+                                        rows="2"></textarea>
+                        </div>
+                        <p class="help">Starts the generated text with the specified text. <em>(Max 100
+                            characters)</em></p>
+                    </div>
+                    <div class="settings-advanced">
+                        <div class="field">
+                            <label class="label">Generated Text Length</label>
+                            <div class="control">
+                                <input id="length" class="input" type="text" placeholder="Text input" value="20">
+                            </div>
+                            <p class="help">Length of the text in tokens to generate. <em>(max: 1023)</em></p>
+                        </div>
+                        <div class="field">
+                            <label class="label">Temperature</label>
+                            <div class="control">
+                                <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
+                            </div>
+                            <p class="help">Controls the generated text "creativity." <em>(the higher the temperature, the
+                                more creative)</em>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <label class="label">Top <em>k</em></label>
+                            <div class="control">
+                                <input id="top_k" class="input" type="text" placeholder="40" value="40">
+                            </div>
+                            <p class="help">Constrains the generated text tokens to the top <em>k</em> possibilities. <em>(set
+                                to 0 to disable)</em>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <span class="control">
+                            <button type="submit" name="submit" id="generate-text" class="button is-link">
+                                <span class="icon">
+                                    <i class="fas fa-md fa-pen"></i>
+                                </span>
+                                <span>Generate Text!</span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <div id="extra-buttons" class="buttons">
+                    <span class="control">
+                        <button id="save-image" class="button is-success">
+                            <span class="icon">
+                            <i class="fas fa-md fa-save"></i>
+                            </span><span>Save Image</span>
+                        </button>
+                    </span>
+
+                    <span class="control">
+                        <button id="clear-text" class="button is-danger">
+                            <span class="icon">
+                            <i class="fas fa-md fa-trash-alt"></i>
+                            </span>
+                            <span>Clear Texts</span>
+                        </button> 
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 </main>
@@ -178,28 +181,6 @@
 </script>
 
 <script type="text/javascript">
-    <!--  This updates the -->
-    $(function () {
-        $("#candidate").on("change", function () {
-            switch ($(this).val()) {
-                case "Sanders":
-                    $("#candidate_speech_prompt").html("Sanders's speech prompt");
-                    break;
-                case "Biden":
-                    $("#candidate_speech_prompt").html("Biden's speech prompt");
-                    break;
-                case "Bloomberg":
-                    $("#candidate_speech_prompt").html("Bloomberg's speech prompt");
-                    break;
-                case "Warren":
-                    $("#candidate_speech_prompt").html("Warren's speech prompt");
-                    break;
-                case "Buttigieg":
-                    $("#candidate_speech_prompt").html("Buttigieg's speech prompt");
-                    break;
-            }
-        });
-    });
     // Given code
     $(function () {
         $('#gen-form').submit(function (e) {
