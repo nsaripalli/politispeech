@@ -14,17 +14,22 @@ body {
 
 footer {
     /* max-height: 5% !important; */
-    padding: 1em !important
+    padding: 1em !important;
+    background-color: #fafafa;
 }
 
-section {
+main {
     /* min-height: 95% !important; */
     width: 100%;
+    max-width: 1200px;
+    padding: 15px;
     font-family: 'Lato', sans-serif;
 }
 
-.container {
-    height: inherit;
+@media (min-width: 475px) {
+    main {
+        padding: 25px;
+    }
 }
 
 /*---------------------------
@@ -182,6 +187,7 @@ ORIGINAL STYLES
 }
 
 #extra-buttons {
+    display: none;
     padding-top: 1em;
     margin-top: 1em;
     border-top: 0.5px solid #d5d5d5;
