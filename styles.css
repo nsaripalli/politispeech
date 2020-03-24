@@ -23,6 +23,7 @@ main {
     max-width: 1200px;
     padding: 15px;
     font-family: 'Lato', sans-serif;
+    color: #2c2c2c;
 }
 
 @media (min-width: 475px) {
@@ -66,7 +67,7 @@ CAROUSEL
     position: relative;
     width: 100%;
     height: 350px;
-    border: solid 2px salmon;
+    border: solid 2px #d41b2c;
     border-radius: 5px;
 }
 img {
@@ -201,7 +202,8 @@ SETTINGS
     font-family: 'Lato', sans-serif;
     font-size: 1.3em;
     font-weight: 900;
-    border: solid 2px salmon;
+    color: #2c2c2c;
+    border: solid 2px #d41b2c;
     border-radius: 5px;
 }
 
@@ -213,7 +215,7 @@ ORIGINAL STYLES
     background-color: #fff;
     display: block;
     padding: 1.25rem;
-    color: #4a4a4a;
+    color: #2c2c2c;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.25;
@@ -225,7 +227,7 @@ ORIGINAL STYLES
 }
 
 .gen-box.warning {
-    color: red;
+    color: #d41b2c;
     font-weight: 700;
 
 }
