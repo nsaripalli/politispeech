@@ -143,11 +143,20 @@ SETTINGS
 .settings {
     display: flex;
     flex-direction: column;
+    margin: 30px auto;
 }
 
-@media (min-width: 475px) {
+.settings-col {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
     .settings {
         flex-direction: row;
+    }
+
+    .settings-col {
+        width: 50%;
     }
 }
 
