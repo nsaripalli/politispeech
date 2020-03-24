@@ -12,11 +12,13 @@ body {
 }
 
 footer {
-    /* max-height: 5% !important; */
-    width: 100%;
-    font-size: .9em;
-    padding: 1em !important;
+    padding: 15px;
     background-color: #fafafa;
+}
+
+footer p {
+    margin-bottom: .5em;
+    max-width: 1200px;
 }
 
 main {
@@ -29,7 +31,7 @@ main {
 }
 
 @media (min-width: 475px) {
-    main {
+    main, footer {
         padding: 25px;
     }
 }
@@ -56,13 +58,8 @@ main {
 }
 
 /*---------------------------
-GRAPHICS
----------------------------*/
-
-/*---------------------------
 CAROUSEL
 ---------------------------*/
-
 /** * Designed by Upperquad [https://upperquad.com] developed by Aranja [https://aranja.com] for Facebook. * See it live on https://nonprofits.fb.com/learn-the-basics */
 
 .Candidates {
@@ -197,8 +194,6 @@ SETTINGS
     display: none;
 }
 
-/* SELECT DROPDOWN --------------------- */
-
 .settings-select {
     display: block;
     font-family: 'Lato', sans-serif;
@@ -208,10 +203,6 @@ SETTINGS
     border: solid 2px #d41b2c;
     border-radius: 5px;
 }
-
-/*---------------------------
-ORIGINAL STYLES
----------------------------*/
 
 .gen-box {
     display: flex;
