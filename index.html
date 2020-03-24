@@ -27,7 +27,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet"></head>
 
 <body>
 <section id="main" class="section">
@@ -57,8 +57,8 @@
             </div>
         </div>
 
-        <div class="columns is-variable is-5">
-            <div class="column is-narrow" style="width: 250px;">
+        <div class="settings">
+            <div class="settings-col">
                 <label for="candidate">Choose a candidate</label>
 
                 <select id="candidate">
@@ -89,25 +89,27 @@
                         </div>
                         <p class="help">Length of the text in tokens to generate. <em>(max: 1023)</em></p>
                     </div>
+                    <div class="settings-advanced">
+                        <div class="field">
+                            <label class="label">Temperature</label>
+                            <div class="control">
+                                <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
+                            </div>
+                            <p class="help">Controls the generated text "creativity." <em>(the higher the temperature, the
+                                more
+                                creative)</em></p>
+                        </div>
+                        <div class="field">
+                            <label class="label">Top <em>k</em></label>
+                            <div class="control">
+                                <input id="top_k" class="input" type="text" placeholder="40" value="40">
+                            </div>
+                            <p class="help">Constrains the generated text tokens to the top <em>k</em> possibilities. <em>(set
+                                to 0 to
+                                disable)</em></p>
+                        </div>
+                    </div>
 
-                    <div class="field">
-                        <label class="label">Temperature</label>
-                        <div class="control">
-                            <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
-                        </div>
-                        <p class="help">Controls the generated text "creativity." <em>(the higher the temperature, the
-                            more
-                            creative)</em></p>
-                    </div>
-                    <div class="field">
-                        <label class="label">Top <em>k</em></label>
-                        <div class="control">
-                            <input id="top_k" class="input" type="text" placeholder="40" value="40">
-                        </div>
-                        <p class="help">Constrains the generated text tokens to the top <em>k</em> possibilities. <em>(set
-                            to 0 to
-                            disable)</em></p>
-                    </div>
                     <div class="buttons">
               <span class="control">
                 <button type="submit" name="submit" id="generate-text" class="button is-link">
