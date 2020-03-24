@@ -1,0 +1,154 @@
+/*---------------------------
+GENERAL
+---------------------------*/
+
+html,
+body {
+    /* height: 100% !important; */
+    margin: 0 !important;
+    /* background-color: rgb(10, 25, 66); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    /* max-height: 5% !important; */
+    padding: 1em !important
+}
+
+section {
+    /* min-height: 95% !important; */
+    width: 100%;
+}
+
+/*---------------------------
+GRAPHICS
+---------------------------*/
+
+/*---------------------------
+CAROUSEL
+---------------------------*/
+
+/** * Designed by Upperquad [https://upperquad.com] developed by Aranja [https://aranja.com] for Facebook. * See it live on https://nonprofits.fb.com/learn-the-basics */
+
+img {
+    width: 50%;
+    border-radius: 50%;
+}
+.Candidates {
+    position: relative;
+    width: 21.8125em;
+    /* height: 25.5625em; */
+    height: 50%;
+    margin: 2.1875em auto 0 auto;
+}
+/* @media (min-width: 103.125em) {
+    .Candidates::before, .Candidates::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 20em;
+        height: 100%;
+   }
+    .Candidates::before {
+        right: calc(-50vw + 50%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff, #fff);
+   }
+    .Candidates::after {
+        left: calc(-50vw + 50%);
+        background: linear-gradient(to left, rgba(255, 255, 255, 0), #fff, #fff);
+   }
+} */
+
+.Candidates-slides {
+    position: relative;
+    display: flex;
+    top: 5em;
+    padding-left: 0.3125em;
+}
+.Candidates-slide {
+    position: absolute;
+    padding-left: 0.625em;
+    top: 3.5625em;
+    width: 20em;
+    height: 16.9375em;
+}
+
+.speech-preview::after {
+    content: '...'
+}
+
+.Candidates-slide:nth-child(1) {
+    animation: Candidates-animation 20s -4s ease-in-out infinite;
+}
+.Candidates-slide:nth-child(2) {
+    animation: Candidates-animation 20s -8s ease-in-out infinite;
+}
+.Candidates-slide:nth-child(3) {
+    animation: Candidates-animation 20s -12s ease-in-out infinite;
+}
+.Candidates-slide:nth-child(4) {
+    animation: Candidates-animation 20s -16s ease-in-out infinite;
+}
+.Candidates-slide:nth-child(5) {
+    animation: Candidates-animation 20s -20s ease-in-out infinite;
+}
+@keyframes Candidates-animation {
+    0%, 16% {
+        transform: translateX(200%);
+   }
+    20%, 36% {
+        transform: translateX(100%);
+   }
+    40%, 56% {
+        transform: translateX(0%);
+   }
+    60%, 76% {
+        transform: translateX(-100%);
+   }
+    80%, 96% {
+        transform: translateX(-200%);
+   }
+    100%, 100% {
+        transform: translateX(-300%);
+   }
+}
+
+/*---------------------------
+ORIGINAL STYLES
+---------------------------*/
+
+.gen-box {
+    background-color: #aaf;
+    display: block;
+    padding: 1.25rem;
+    color: #4a4a4a;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.gen-border {
+    height: 0.25em;
+    background-color: #d5d5d5;
+}
+
+.gen-box.warning {
+    color: red;
+    font-weight: 700;
+
+}
+
+.brand-text {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em
+}
+
+#extra-buttons {
+    padding-top: 1em;
+    margin-top: 1em;
+    border-top: 0.5px solid #d5d5d5;
+}
