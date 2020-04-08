@@ -190,7 +190,7 @@ SETTINGS
     font-weight: 400;
 }
 
-.settings-advanced {
+#settings-advanced.hidden {
     display: none;
 }
 
