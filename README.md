@@ -1,8 +1,8 @@
-## 2020 Democratic Candidates Political Speech Generator
+# 2020 Democratic Candidates Political Speech Generator
 
 This is a website to generate political canidate speeches using Open AI's GPt-2. It runs on top of gpt-2 cloud run. The model training was done from speeches found on cspan for each canidates via the text transcripts. The backend runs on google cloud run. If you would like to learn how the infastructure works please look at https://github.com/minimaxir/gpt-2-cloud-run.
 
-# C-span Scraping
+## C-span Scraping
 Under mining the code to scrape cspan videos for the transcrips can be found:
  STEPS TO RUN PROGRAM:
 
