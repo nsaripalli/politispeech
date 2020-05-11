@@ -190,10 +190,6 @@ SETTINGS
     font-weight: 400;
 }
 
-#settings-advanced.hidden {
-    display: none;
-}
-
 .settings-select {
     display: block;
     font-family: 'Lato', sans-serif;
@@ -238,7 +234,29 @@ img.thumbnail {
 .gen-box.warning {
     color: #d41b2c;
     font-weight: 700;
+}
 
+#advanced-settings-toggle {
+    display: block;
+    font-size: .75em;
+    margin-top: -0.5em;
+    margin-bottom: 1em;
+}
+
+/* #advanced-settings-toggle:after.#settings-advanced.hidden  {
+    content: " \25BE";
+} */
+
+#settings-advanced {
+  margin-bottom: 1em;
+}
+
+#settings-advanced.hidden {
+    display: none;
+}
+
+.buttons {
+    /* margin-top: 1em; */
 }
 
 #extra-buttons {
