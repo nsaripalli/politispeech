@@ -1,12 +1,14 @@
-This is currently a program that given a C-SPAN URL for a search of videos, the program will download all transcripts of the videos in that search result
+# 2020 Democratic Candidates Political Speech Generator
 
-STEPS TO RUN PROGRAM:
+This is a website to generate political canidate speeches using Open AI's GPt-2. It runs on top of gpt-2 cloud run. The model training was done from speeches found on cspan for each canidates via the text transcripts. The backend runs on google cloud run. If you would like to learn how the infastructure works please look at https://github.com/minimaxir/gpt-2-cloud-run.
 
-Install all packages `pip3 install -r requirements.txt`
+## C-span Scraping
+Under mining the code to scrape cspan videos for the transcrips can be found:
+ STEPS TO RUN PROGRAM:
 
-cd into the `mining` folder to run the transcript_scraper
-
-run `python3 transcript_scraper.py` with the specified arguments
+* Install all packages `pip3 install -r requirements.txt`
+* cd into the `mining` folder to run the transcript_scraper
+* run `python3 transcript_scraper.py` with the specified arguments
 
 To see what arguments need to be passed in, type in python transcript_scraper.py --help 
 
